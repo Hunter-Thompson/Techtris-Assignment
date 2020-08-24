@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  become: false
+  gather_facts: no
+
+  tasks:
+  #- name: ensure git is at the latest version
+  #  apt:
+  #    name: git
+  #    state: latest
+
+  - name: clone the repo
+    shell: git clone https://github.com/Hunter-Thompson/helloworld-node.git
+  
+  - name: build the docker image 
+    shell: cd helloworld-node && docker build -t helloworld .
+  
+  - name: push docker image 
+    shell: ecs-cli push helloworld:latest --region us-east-2
+
+  #- name: apply kubernetes file
+  #  shell: kubectl apply -f helloworld.yml
+
