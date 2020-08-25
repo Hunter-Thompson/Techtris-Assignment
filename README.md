@@ -21,6 +21,11 @@ export AWS_SECRET_KEY=
 cd Terraform && terraform init && yes yes | terraform apply
 ```
 
+## Add IAM ID in helloworld.yml
+```sh
+      - image: $IAM_ID.dkr.ecr.us-west-2.amazonaws.com/helloworld:latest
+```
+
 ## Deploy application to Kube cluster
 ```sh
 ansible-playbook -v playbook.yml
