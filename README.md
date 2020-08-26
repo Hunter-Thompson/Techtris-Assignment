@@ -20,7 +20,7 @@ export AWS_SECRET_KEY=
 ```sh
 key_name = "key"
 
-public_key_path = "~/.ssh/id_rsa.pub
+public_key_path = "~/.ssh/id_rsa.pub"
 ```
 
 ## Create Kube cluster and resources
