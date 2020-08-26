@@ -16,7 +16,7 @@
     shell: cd helloworld-node && docker build -t helloworld .
   
   - name: push docker image 
-    shell: ecs-cli push helloworld:latest --region us-east-1
+    shell: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $IAM_ID-us-east-1.amazonaws.com/helloworld:latest && docker tag helloworld:latest $IAM_ID.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest && docker push $IAM_ID.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
   - name: apply kubernetes file
     shell: kubectl apply -f helloworld.yml
