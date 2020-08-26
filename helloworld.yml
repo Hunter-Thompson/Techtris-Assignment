@@ -16,7 +16,7 @@ spec:
         app: helloworld
     spec:
       containers:
-      - image: $IAM_ID.dkr.ecr.us-west-2.amazonaws.com/helloworld:latest
+      - image: $IAM_ID.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
         imagePullPolicy: Always
         name: helloworld    
         ports:
