@@ -16,6 +16,13 @@ export AWS_ACCESS_KEY=
 export AWS_SECRET_KEY=
 ```
 
+## Fill in variables in terraform.tfvars
+```sh
+key_name = "key"
+
+public_key_path = "~/.ssh/id_rsa.pub
+```
+
 ## Create Kube cluster and resources
 ```sh
 cd Terraform && terraform init && yes yes | terraform apply
