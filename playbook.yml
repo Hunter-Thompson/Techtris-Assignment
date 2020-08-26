@@ -16,7 +16,7 @@
     shell: cd helloworld-node && docker build -t helloworld .
   
   - name: push docker image 
-    shell: ecs-cli push helloworld:latest --region us-east-2
+    shell: ecs-cli push helloworld:latest --region us-east-1
 
   - name: apply kubernetes file
     shell: kubectl apply -f helloworld.yml
